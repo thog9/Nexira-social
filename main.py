@@ -36,7 +36,7 @@ def _banner():
     """
     print(f"{Fore.GREEN}{banner:^80}{Style.RESET_ALL}")
     print(f"{Fore.GREEN}{'═' * BORDER_WIDTH}{Style.RESET_ALL}")
-    print_border("NEXIRA SOCIAL", Fore.GREEN)
+    print_border("NEXIRA checkin", Fore.GREEN)
     print(f"{Fore.YELLOW}│ {'Website'}: {Fore.CYAN}https://thogtoolhub.com/{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}│ {'Discord'}: {Fore.CYAN}https://discord.gg/MnmYBKfHQf{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}│ {'Channel Telegram'}: {Fore.CYAN}https://t.me/thogairdrops{Style.RESET_ALL}")
@@ -46,10 +46,13 @@ def _banner():
 def _clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# Các hàm giả lập cho các lệnh mới
-async def run_spicenet(language: str):
-    from scripts.spicenet import run_spicenet_script
-    await run_spicenet_script(language)
+async def run_daily(language: str):
+    from scripts.daily import run_daily as daily_run
+    await daily_run(language)
+
+async def run_checkin(language: str):
+    from scripts.checkin import run_checkin as checkin_run
+    await checkin_run(language)
     
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
@@ -58,7 +61,8 @@ async def cmd_exit(language: str):
 
 # Danh sách lệnh menu
 SCRIPT_MAP = {
-    "spicenet": run_spicenet,
+    "daily": run_daily,
+    "checkin": run_checkin,
     "exit": cmd_exit
 }
 
@@ -189,3 +193,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
