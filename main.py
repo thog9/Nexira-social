@@ -36,7 +36,7 @@ def _banner():
     """
     print(f"{Fore.GREEN}{banner:^80}{Style.RESET_ALL}")
     print(f"{Fore.GREEN}{'═' * BORDER_WIDTH}{Style.RESET_ALL}")
-    print_border("NEXIRA checkin", Fore.GREEN)
+    print_border("NEXIRA SOCIAL", Fore.GREEN)
     print(f"{Fore.YELLOW}│ {'Website'}: {Fore.CYAN}https://thogtoolhub.com/{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}│ {'Discord'}: {Fore.CYAN}https://discord.gg/MnmYBKfHQf{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}│ {'Channel Telegram'}: {Fore.CYAN}https://t.me/thogairdrops{Style.RESET_ALL}")
@@ -193,4 +193,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
